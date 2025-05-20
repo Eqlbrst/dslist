@@ -5,19 +5,19 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_belongin")
-public class Belongin {
+@Table(name = "tb_belonging")
+public class Belonging {
 
     @EmbeddedId
     private BelongingPk id = new BelongingPk();
 
     private Integer position;
 
-    public Belongin() {
+    public Belonging() {
 
     }
 
-    public Belongin(Game game, GamesList list, Integer position) {
+    public Belonging(Game game, GamesList list, Integer position) {
         id.setGame(game);
         id.setList(list);
         this.position = position;
@@ -55,7 +55,7 @@ public class Belongin {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Belongin other = (Belongin) obj;
+        Belonging other = (Belonging) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
